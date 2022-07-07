@@ -1,8 +1,8 @@
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { BsChatLeft } from 'react-icons/bs';
-import { FiBluetooth, FiShoppingCart } from 'react-icons/fi';
+import { FiShoppingCart } from 'react-icons/fi';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { RiNotification3Line } from 'react-icons/ri';
 import { useStateContext } from '../contexts/ContextProvider';
@@ -31,10 +31,8 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 
 const NavBar = () => {
   const {
-    activeMenu,
     setActiveMenu,
     isClicked,
-    setIsClicked,
     handleClick,
     screenSize,
     setScreenSize,
@@ -47,14 +45,14 @@ const NavBar = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [setScreenSize]);
   useEffect(() => {
     if (screenSize <= 900) {
       setActiveMenu(false);
     } else {
       setActiveMenu(true);
     }
-  }, [screenSize]);
+  }, [screenSize, setActiveMenu]);
 
   return (
     <div className="flex justify-between p-2 md:mx-6 relative">
@@ -88,7 +86,11 @@ const NavBar = () => {
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
             onClick={() => handleClick('userProfile')}
           >
-            <img className="rouded-full w-8 h-8" src={avatar} />
+            <img
+              className="rouded-full w-8 h-8"
+              src={avatar}
+              alt="Profile Image"
+            />
             <p>
               <span className="text-gray-400 text-14">Hi, </span>{' '}
               <span className="text-gray-400 font-bold ml-1 text-14">

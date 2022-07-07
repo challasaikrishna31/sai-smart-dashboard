@@ -1,24 +1,23 @@
-import React from 'react';
 import {
   ChartComponent,
+  Crosshair,
+  DateTime,
+  HiloSeries,
+  Inject,
+  Logarithmic,
   SeriesCollectionDirective,
   SeriesDirective,
-  Inject,
-  HiloSeries,
   Tooltip,
-  DateTime,
   Zoom,
-  Logarithmic,
-  Crosshair,
 } from '@syncfusion/ej2-react-charts';
 
+import { Header } from '../../components';
+import { useStateContext } from '../../contexts/ContextProvider';
 import {
   financialChartData,
   FinancialPrimaryXAxis,
   FinancialPrimaryYAxis,
 } from '../../data/dummy';
-import { useStateContext } from '../../contexts/ContextProvider';
-import { ChartsHeader, Header } from '../../components';
 
 const date1 = new Date('2017, 1, 1');
 

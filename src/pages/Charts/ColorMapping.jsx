@@ -1,25 +1,24 @@
-import React from 'react';
 import {
+  Category,
   ChartComponent,
+  ColumnSeries,
+  Inject,
+  Legend,
+  RangeColorSettingDirective,
+  RangeColorSettingsDirective,
   SeriesCollectionDirective,
   SeriesDirective,
-  Inject,
-  ColumnSeries,
-  Category,
   Tooltip,
-  Legend,
-  RangeColorSettingsDirective,
-  RangeColorSettingDirective,
 } from '@syncfusion/ej2-react-charts';
 
+import { Header } from '../../components';
+import { useStateContext } from '../../contexts/ContextProvider';
 import {
   colorMappingData,
   ColorMappingPrimaryXAxis,
   ColorMappingPrimaryYAxis,
   rangeColorMapping,
 } from '../../data/dummy';
-import { ChartsHeader, Header } from '../../components';
-import { useStateContext } from '../../contexts/ContextProvider';
 
 const ColorMapping = () => {
   const { currentMode } = useStateContext();

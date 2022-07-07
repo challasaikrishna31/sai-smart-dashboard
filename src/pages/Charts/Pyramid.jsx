@@ -1,19 +1,18 @@
-import React from 'react';
 import {
   AccumulationChartComponent,
+  AccumulationDataLabel,
+  AccumulationLegend,
+  AccumulationSelection,
   AccumulationSeriesCollectionDirective,
   AccumulationSeriesDirective,
-  Inject,
-  AccumulationLegend,
-  AccumulationDataLabel,
   AccumulationTooltip,
+  Inject,
   PyramidSeries,
-  AccumulationSelection,
 } from '@syncfusion/ej2-react-charts';
 
-import { PyramidData } from '../../data/dummy';
+import { Header } from '../../components';
 import { useStateContext } from '../../contexts/ContextProvider';
-import { ChartsHeader, Header } from '../../components';
+import { PyramidData } from '../../data/dummy';
 
 const Pyramid = () => {
   const { currentMode } = useStateContext();
